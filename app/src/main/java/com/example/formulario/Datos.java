@@ -45,9 +45,9 @@ public class Datos extends AppCompatActivity {
         //Acá creo mi evento para mandarlo a la nueva activity
         mBotonCompartir.setOnClickListener(v -> {
             //Acá reuso las variables que ya tienen el contenido
-            String textU = txt_UsuarioRecibido.getText().toString();
-            textU = textU + txt_EmailRecibido.getText().toString();
-            textU = textU + txt_ContraRecibida.getText().toString();
+            String textU = txt_UsuarioRecibido.getText().toString() + "\n";
+            textU = textU + txt_EmailRecibido.getText().toString() + "\n";
+            textU = textU + txt_ContraRecibida.getText().toString() + "\n";
             textU = textU + txt_GeneroRecibido.getText().toString();
             String textP = txt_EmailRecibido.getText().toString();
             String textE = txt_ContraRecibida.getText().toString();
