@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import static com.example.formulario.AppConstant.TEXT_KEY;
+import static com.example.formulario.AppConstant.TEXT_CONTRASEÑA;
+import static com.example.formulario.AppConstant.TEXT_EMAIL;
+import static com.example.formulario.AppConstant.TEXT_GENERO;
+//import static com.example.formulario.AppConstant.TEXT_KEY;
+import static com.example.formulario.AppConstant.TEXT_USUARIO;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         //Creo el listener del botón para enviarlo a la nueva actividad
         mEnviar.setOnClickListener(v -> {
-            String text = mUser.getText().toString();
+            //Acá creo las variables
+            String textU = mUser.getText().toString();
+            String textP = mPassword.getText().toString();
+            String textE = mEmail.getText().toString();
+            String textG = mGender.getText().toString();
             //Creo el intent para mandarlo a una nueva actividad, en este caso será la de Datos
             Intent mIntent = new Intent(MainActivity.this, Datos.class);
 
-            mIntent.putExtra(TEXT_KEY, text);
+            //Acá mando los datos con sus id's en constantes
+            mIntent.putExtra(TEXT_USUARIO, textU);
+            mIntent.putExtra(TEXT_CONTRASEÑA, textP);
+            mIntent.putExtra(TEXT_EMAIL, textE);
+            mIntent.putExtra(TEXT_GENERO, textG);
             startActivity(mIntent);
         });
     }
